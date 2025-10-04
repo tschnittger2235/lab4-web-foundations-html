@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exploring HTML Elements</title>
+
+  <!-- Base URL for relative links -->
+  <base href="./">
+
+  <!-- Example stylesheet link (optional) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Internal styles: required blue h1 + simple table styling -->
+  <style>
+    :root { color-scheme: light dark; }
+    h1 { color: blue; }
+    table { border-collapse: collapse; margin-block: 0.5rem; }
+    th, td { border: 1px solid currentColor; padding: 0.35rem 0.5rem; }
+    figure { margin: 1rem 0; }
+    .visually-hidden { position: absolute; left: -9999px; }
+    nav a { margin-right: .5rem; }
+    details { margin: .5rem 0; }
+  </style>
+</head>
+
+<body>
+  <!-- Page Header / Landmark navigation -->
+  <header>
+    <h1 id="top" data-purpose="page-title">Exploring HTML Elements</h1>
+    <nav aria-label="Primary">
+      <a href="#intro">Intro</a>
+      <a href="#inline">Inline</a>
+      <a href="#media">Media</a>
+      <a href="#forms">Forms</a>
+      <a href="#tables">Tables</a>
+      <a href="#more">More</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <!-- Intro Section -->
+  <section id="intro" aria-labelledby="intro-h2">
+    <h2 id="intro-h2">Hello HTML World</h2>
+
+    <p title="Did you mouse me?">Soon you will &hearts; HTML as much as I do!</p>
+
+    <p>Another paragraph here.</p>
+    <p>And another!</p>
+    <p>
+      I&nbsp;r&nbsp;e&nbsp;a&nbsp;l&nbsp;l&nbsp;y like WHITESPACE&nbsp;&nbsp;&nbsp;don’t you?
+    </p>
+
+    <pre>
+What
+     about now?
+    </pre>
+
+    <p>This is fun isn’t it?</p>
+    <p>Best day ever!</p>
+
+    <!-- using <b> is allowed but not for importance; <strong> below is for importance -->
+    <p>It definitely is a <b>great</b> day for writing valid HTML!</p>
+  </section>
+
+  <!-- Block quotes & description list -->
+  <section aria-labelledby="text-structures">
+    <h2 id="text-structures">Quotations & Definitions</h2>
+
+    <p>Short inline quote: <q>Semantic HTML improves accessibility</q>.</p>
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">
+      “HTML is the standard markup language for creating Web pages.”
+    </blockquote>
+
+    <dl>
+      <dt>HTML</dt>
+      <dd>The standard markup language for documents on the web.</dd>
+      <dt>CSS</dt>
+      <dd>Styles and layout for HTML documents.</dd>
+      <dt>JavaScript</dt>
+      <dd>Programming language that adds interactivity.</dd>
+    </dl>
+  </section>
+
+  <!-- Main Content Area -->
+  <main id="more" aria-labelledby="articles-h2">
+    <h2 id="articles-h2">Articles, Sections & Aside</h2>
+
+    <article aria-labelledby="a1-h">
+      <!-- hgroup groups a heading with a subheading; currently allowed by the WHATWG spec -->
+      <hgroup>
+        <h3 id="a1-h">Learning HTML</h3>
+        <h4>The basics of semantic tags</h4>
+      </hgroup>
+      <p>This article demonstrates using semantic elements to create accessible, maintainable pages.</p>
+    </article>
+
+    <article aria-labelledby="a2-h">
+      <hgroup>
+        <h3 id="a2-h">Another Article</h3>
+        <h4>Exploring sections and asides</h4>
+      </hgroup>
+      <p>Sections divide content logically; asides present related information.</p>
+    </article>
+
+    <aside aria-label="Did you know?">
+      <p>The <code>&lt;aside&gt;</code> element is great for sidebars and callouts.</p>
+    </aside>
+  </main>
+
+  <!-- Lists -->
+  <section aria-labelledby="lists-h2">
+    <h2 id="lists-h2">Lists</h2>
+
+    <h3>Unordered</h3>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <h3>Ordered</h3>
+    <ol>
+      <li>Learn HTML</li>
+      <li>Practice CSS</li>
+      <li>Master JavaScript</li>
+    </ol>
+
+    <h3>Menu</h3>
+    <menu>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </menu>
+  </section>
+
+  <!-- Inline phrasing elements -->
+  <section id="inline" aria-labelledby="inline-h2">
+    <h2 id="inline-h2">Inline Elements Demo</h2>
+
+    <p>
+      Here is an <abbr title="HyperText Markup Language">HTML</abbr> example with
+      <strong>important</strong> text, <em>emphasized</em> words, <i>italic text</i>,
+      and <mark>highlighted text</mark>.
+    </p>
+
+    <p>
+      Use <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.
+      The variable <var>x</var> is common in math.
+      E = mc<sup>2</sup> and H<sub>2</sub>O are classic examples.
+    </p>
+
+    <p>Some <code>inlineCode()</code> and a <samp>program output sample</samp>.</p>
+    <p><s>Outdated text</s> updated with <ins>new info</ins>. <u>Underlined</u> for annotation.</p>
+
+    <p>Sometimes we need<wbr>word-break<wbr>opportunities in veryveryverylongwords.</p>
+
+    <p>Machine-readable data example: <data value="2025">Year 2025</data>.</p>
+
+    <p>Define a term: <dfn>Browser</dfn> — a program that renders HTML.</p>
+
+    <!-- Ruby annotation (East Asian) -->
+    <p>
+      <ruby>
+        漢 <rt>kan</rt><rp>(</rp>kan<rp>)</rp>
+        字 <rt>ji</rt><rp>(</rp>ji<rp>)</rp>
+      </ruby>
+    </p>
+
+    <p><small>Small print and legal text often use the <code>&lt;small&gt;</code> element.</small></p>
+    <p>A generic inline container: <span data-kind="note">this span carries a <code>data-*</code> attribute.</span></p>
+
+    <p>Current time: <time id="now" datetime=""></time></p>
+  </section>
+
+  <!-- Media -->
+  <section id="media" aria-labelledby="media-h2">
+    <h2 id="media-h2">Images, Picture, Maps, Audio & Video</h2>
+
+    <figure>
+      <img src="bad-validation.png" alt="Example placeholder image">
+      <figcaption>An image with a caption.</figcaption>
+    </figure>
+
+    <h3>Responsive Picture</h3>
+    <picture>
+      <source srcset="large-image.jpg" media="(min-width: 800px)">
+      <source srcset="medium-image.jpg" media="(min-width: 400px)">
+      <img src="small-image.jpg" alt="Responsive example">
+    </picture>
+
+    <h3>Image Map</h3>
+    <img src="example-map.png" alt="Clickable map" usemap="#example-map">
+    <map name="example-map">
+      <area shape="rect" coords="34,44,270,180" href="https://developer.mozilla.org" alt="MDN">
+      <area shape="circle" coords="337,150,44" href="https://www.w3.org" alt="W3C">
+    </map>
+
+    <h3>Audio</h3>
+    <audio controls>
+      <source src="sample-audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video</h3>
+    <video width="320" height="240" controls>
+      <source src="sample-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h3>SVG</h3>
+    <svg width="160" height="160" role="img" aria-label="Yellow circle with green stroke">
+      <circle cx="80" cy="80" r="70" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <h3>Iframe</h3>
+    <iframe
+      src="https://developer.mozilla.org"
+      width="600" height="360"
+      title="MDN Web Docs">
+    </iframe>
+  </section>
+
+  <!-- MathML -->
+  <section aria-labelledby="math-h2">
+    <h2 id="math-h2">MathML Example</h2>
+    <p>Pythagorean theorem:</p>
+    <math>
+      <mrow>
+        <msup><mi>a</mi><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mi>b</mi><mn>2</mn></msup>
+        <mo>=</mo>
+        <msup><mi>c</mi><mn>2</mn></msup>
+      </mrow>
+    </math>
+  </section>
+
+  <!-- Forms (controls, datalist, meter, progress, output, etc.) -->
+  <section id="forms" aria-labelledby="forms-h2">
+    <h2 id="forms-h2">Forms & Controls</h2>
+
+    <form action="#" method="get">
+      <fieldset>
+        <legend>Profile</legend>
+
+        <p>
+          <label for="name">Name</label><br>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </p>
+
+        <p>
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </p>
+
+        <p>
+          <label for="color">Favorite color</label><br>
+          <input id="color" name="color" list="colors" placeholder="Choose or type">
+          <datalist id="colors">
+            <option value="Red"></option>
+            <option value="Green"></option>
+            <option value="Blue"></option>
+          </datalist>
+        </p>
+
+        <p>
+          <label for="pet">Pet</label><br>
+          <select id="pet" name="pet">
+            <optgroup label="Common">
+              <option>Dog</option>
+              <option>Cat</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option>Fish</option>
+              <option>Bird</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <label for="about">About you</label><br>
+          <textarea id="about" name="about" rows="3" cols="30" placeholder="Say hello…"></textarea>
+        </p>
+
+        <p>
+          <label for="score">Skill level (0–10)</label><br>
+          <meter id="score" min="0" max="10" low="3" high="8" optimum="9" value="6">6</meter>
+        </p>
+
+        <p>
+          <label for="progress">Profile completion</label><br>
+          <progress id="progress" max="100" value="40">40%</progress>
+        </p>
+
+        <p>
+          <button type="button" id="calc-btn">Calculate</button>
+          Result: <output id="calc-out" for="calc-btn">—</output>
+        </p>
+      </fieldset>
+    </form>
+  </section>
+
+  <!-- Tables -->
+  <section id="tables" aria-labelledby="tables-h2">
+    <h2 id="tables-h2">Table Demo</h2>
+    <table>
+      <caption>Sample Table of Languages</caption>
+      <thead>
+        <tr>
+          <th scope="col">Language</th>
+          <th scope="col">Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>HTML</td><td>Structure</td></tr>
+        <tr><td>CSS</td><td>Styling</td></tr>
+        <tr><td>JavaScript</td><td>Interactivity</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">End of Table</td></tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <!-- Details / dialog / template -->
+  <section aria-labelledby="widgets-h2">
+    <h2 id="widgets-h2">Details, Dialog & Template</h2>
+
+    <details>
+      <summary>What is semantic HTML?</summary>
+      <p>Using elements that convey meaning (like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, etc.).</p>
+    </details>
+
+    <p>
+      <button type="button" id="open-dialog">Open dialog</button>
+    </p>
+
+    <dialog id="demo-dialog" aria-labelledby="dialog-title">
+      <h3 id="dialog-title">Hello from &lt;dialog&gt;</h3>
+      <p>This dialog can be dismissed.</p>
+      <form method="dialog">
+        <button value="close">Close</button>
+      </form>
+    </dialog>
+
+    <template id="card-template">
+      <article class="card">
+        <h3>Template-inserted card</h3>
+        <p>This content was cloned from a &lt;template&gt;.</p>
+      </article>
+    </template>
+
+    <div id="cards-target"></div>
+  </section>
+
+  <!-- Custom element and address -->
+  <section aria-labelledby="custom-h2" id="contact">
+    <h2 id="custom-h2">Custom Element & Contact</h2>
+
+    <!-- Custom element name must contain a hyphen to be valid -->
+    <p>My school is <my-school>USD</my-school>.</p>
+
+    <address>
+      Contact us at:
+      <a href="mailto:info@example.com">info@example.com</a><br>
+      123 Web Street, Internet City
+    </address>
+  </section>
+
+  <footer>
+    <p><small>&copy; <time id="year" datetime="2025-01-01">2025</time> HTML Exploration Project</small> —
+      <a href="#top">Back to top</a></p>
+  </footer>
+
+  <!-- NoScript notice -->
+  <noscript>
+    <p><strong>Note:</strong> This page works better with JavaScript enabled.</p>
+  </noscript>
+
+  <!-- Script: print current day/time, wire up demo widgets, and show template content -->
+  <script>
+    (function () {
+      // Current date/time in <time id="now">
+      const nowEl = document.getElementById('now');
+      const now = new Date();
+      if (nowEl) {
+        nowEl.dateTime = now.toISOString();
+        nowEl.textContent = now.toLocaleString();
+      }
+
+      // Simple "calculation" to show <output>
+      const btn = document.getElementById('calc-btn');
+      const out = document.getElementById('calc-out');
+      if (btn && out) {
+        btn.addEventListener('click', () => {
+          const value = Math.floor(Math.random() * 100);
+          out.value = String(value);
+        });
+      }
+
+      // Dialog open button
+      const dlg = document.getElementById('demo-dialog');
+      const openBtn = document.getElementById('open-dialog');
+      if (dlg && openBtn && typeof dlg.showModal === 'function') {
+        openBtn.addEventListener('click', () => dlg.showModal());
+      }
+
+      // Instantiate a template card
+      const tpl = document.getElementById('card-template');
+      const target = document.getElementById('cards-target');
+      if (tpl && target) {
+        target.appendChild(tpl.content.cloneNode(true));
+      }
+    }());
+  </script>
+</body>
+</html>
